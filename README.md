@@ -25,6 +25,33 @@ Dynamic trust is constantly measured throughout the lifecycle, based on the pres
 
 # Root of Trust (ROT)
 
+# [AWS Nitro Enclaves](https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html#nitro-enclave-reqs)
+
+* Uses "Enclave Image File" (.EIF) format
+* Provide only secure local socket connectivity with their parent instance - vsock socket 
+* No persistent storage
+* No interactive access 
+* No external networking 
+* Attestation feature, which allows you to verify an enclave's identity and ensure that only authorized code is running inside it
+* Integrated with the AWS Key Management Service
+* No additional charges for using Nitro Enclaves. Billed standard charges for the Amazon EC2 instance
+* Uses [Nitro Enclave CLI](https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-cli.html)
+* Enclave application has two components 
+  * application that runs on parent instance
+  * application that runs insidet the enclave 
+* AWS Enclave Developer [AMI](https://aws.amazon.com/marketplace/pp/prodview-37z6ersmwouq2)
+
+> Using the Nitro Enclaves SDK, an enclave can request a signed attestation document from the Nitro Hypervisor that includes its unique measurements. This document can be attached to requests from the enclave to an external service. The external service can validate the measurements included in the attestation document against the values in the access policy to determine whether to grant the enclave access to the requested operation.
+
+# [GCP Confidential Computing](https://cloud.google.com/confidential-computing)
+
+**Confidential VM**:
+
+* Confidential VM is a type of Compute Engine VM
+* Confidential VM runs on hosts with AMD EPYC processors which feature - [AMD Secure Encrypted Virtualization (SEV)](https://developer.amd.com/sev/)
+  * How does AMD Platform Security Processor (AMD Secure Technology(p. 157))[https://www.amd.com/system/files/TechDocs/52740_16h_Models_30h-3Fh_BKDG.pdf] effect real security?   
+* Use [Virtual Trusted Platform Module](https://trustedcomputinggroup.org/resource/trusted-platform-module-tpm-summary/) Attestation. 
+
 # Links 
 
 [GCP Confidential VM](https://cloud.google.com/compute/confidential-vm/docs/about-cvm)
