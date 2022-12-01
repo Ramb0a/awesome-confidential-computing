@@ -63,9 +63,9 @@ known secure state permitting only authenticated firmware and microcode authored
 
 Full VM/GPU TEE created by: 
 
-* On-Die Root of Trust (RoT) before OS -> GPU communication, GPU uses ROT to confirm firmware authenticity 
-* Device Attestation - authenticate NVIDIA GPU with CC enabled & trusted firmware/hardware configuration
-* ES-GCM 256 - CPU <-> GPU data transfers encrypted using hardware AWS256-GCM FIPS 140-3 level 2.
+* **On-Die Root of Trust (RoT)** - before OS -> GPU communication, GPU uses ROT to confirm firmware authenticity 
+* **Device Attestation** - authenticate NVIDIA GPU with CC enabled & trusted firmware/hardware configuration
+* **ES-GCM 256** - CPU <-> GPU data transfers encrypted using hardware AWS256-GCM FIPS 140-3 level 2.
 
 No CUDA application code changes are required to use the NVIDIA confidential computing technology
 
