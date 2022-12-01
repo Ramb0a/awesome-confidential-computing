@@ -52,6 +52,23 @@ Dynamic trust is constantly measured throughout the lifecycle, based on the pres
   * How does AMD Platform Security Processor (AMD Secure Technology(p. 157))[https://www.amd.com/system/files/TechDocs/52740_16h_Models_30h-3Fh_BKDG.pdf] effect real security?   
 * Use [Virtual Trusted Platform Module](https://trustedcomputinggroup.org/resource/trusted-platform-module-tpm-summary/) Attestation. 
 
+# TEE GPU
+
+[NVIDIA H100](https://resources.nvidia.com/en-us-tensor-core)
+
+* **Secure boot** - set of hardware/software ensuring GPU started from 
+known secure state permitting only authenticated firmware and microcode authored by NVIDIA to run while GPU booting.
+* **Measured boot** - process for collecting, securely storing, and reporting characteristics of boot process determining GPU’s secure state. 
+** **Attestation and verification** - are the means of comparing measurements to reference values to ensure that the device is an expected secure state.
+
+Full VM/GPU TEE created by: 
+
+* On-Die Root of Trust (RoT) before OS -> GPU communication, GPU uses ROT to confirm firmware authenticity 
+* Device Attestation - authenticate NVIDIA GPU with CC enabled & trusted firmware/hardware configuration
+* ES-GCM 256 - CPU <-> GPU data transfers encrypted using hardware AWS256-GCM FIPS 140-3 level 2.
+
+No CUDA application code changes are required to use the NVIDIA confidential computing technology
+
 # Links 
 
 [GCP Confidential VM](https://cloud.google.com/compute/confidential-vm/docs/about-cvm)
