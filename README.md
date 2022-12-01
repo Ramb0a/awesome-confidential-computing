@@ -6,7 +6,7 @@
 
 Confidential Computing provides end-to-end data protection at-rest, in-transit, and in-use. 
 
-Confidential Computing leverages Trusted Execution Environments. A TEE is a secure area within a processorthat runs an isolated environment parrallel to the OS. 
+Confidential Computing leverages Trusted Execution Environments. A TEE is a secure area within a processor that runs an isolated environment parrallel to the OS. 
 
 A TEE is defined as assuring:
 
@@ -38,7 +38,7 @@ Dynamic trust is constantly measured throughout the lifecycle, based on the pres
 * Uses [Nitro Enclave CLI](https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-cli.html)
 * Enclave application has two components 
   * application that runs on parent instance
-  * application that runs insidet the enclave 
+  * application that runs inside the enclave 
 * AWS Enclave Developer [AMI](https://aws.amazon.com/marketplace/pp/prodview-37z6ersmwouq2)
 
 > Using the Nitro Enclaves SDK, an enclave can request a signed attestation document from the Nitro Hypervisor that includes its unique measurements. This document can be attached to requests from the enclave to an external service. The external service can validate the measurements included in the attestation document against the values in the access policy to determine whether to grant the enclave access to the requested operation.
@@ -49,7 +49,7 @@ Dynamic trust is constantly measured throughout the lifecycle, based on the pres
 
 * Confidential VM is a type of Compute Engine VM
 * Confidential VM runs on hosts with AMD EPYC processors which feature - [AMD Secure Encrypted Virtualization (SEV)](https://developer.amd.com/sev/)
-  * How does AMD Platform Security Processor (AMD Secure Technology(p. 157))[https://www.amd.com/system/files/TechDocs/52740_16h_Models_30h-3Fh_BKDG.pdf] effect real security?   
+  * How does AMD Platform Security Processor [AMD Secure Technology(p. 157)](https://www.amd.com/system/files/TechDocs/52740_16h_Models_30h-3Fh_BKDG.pdf) effect real security?   
 * Use [Virtual Trusted Platform Module](https://trustedcomputinggroup.org/resource/trusted-platform-module-tpm-summary/) Attestation. 
 
 # TEE GPU
