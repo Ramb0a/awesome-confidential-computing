@@ -1,15 +1,25 @@
+# Confidential Computing [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+
 > By providing security though the lowest layers of hardware, with a minimum of dependencies, it is possible to remove the operating system and device driver vendors, platform and peripheral vendors, and service providers and their admins, from the list of required trusted parties, thereby reducing exposure to potential compromise at any point in the system lifecycle.
 
 > With these increased protections for data-in-use, new use cases become more realistic, e.g. multi-party computations in financial and/or regulated industries or machine learning at the edge, where the data being operated needs protecting from the processing environment owner itself.
 
-> Trusted Execution Environment (TEE) is a tamper resistant processing environment that runs on a separation kernel. It guarantees the authenticity of the executed code, the integrity of the runtime states (e.g. CPU registers, memory and sensitive I/O), and the confidentiality of its code, data and runtime states stored on a persistent memory. In addition, it shall be able to provide remote attestation that proves its trustworthiness for third-parties...Attacks performed by exploiting backdoor security flaws are not possible.
-
 Confidential Computing provides end-to-end data protection at-rest, in-transit, and in-use. 
+
+**Use Cases**
+
+Secure Multiparty Computation 
+
+Cryptographic authenticity of images, video and other content - "An isolate could be used at the point of capture to execute the image signal processing computations and append signature and attestation material to the resulting image" - hashing at the point of capture
+* use case begun  already for "mis/disinformation" by Coalition for Content Provenance and Authenticity (sigh)  
+
+## Trusted Execution Environments 
+
+> Trusted Execution Environment (TEE) is a tamper resistant processing environment that runs on a separation kernel. It guarantees the authenticity of the executed code, the integrity of the runtime states (e.g. CPU registers, memory and sensitive I/O), and the confidentiality of its code, data and runtime states stored on a persistent memory. In addition, it shall be able to provide remote attestation that proves its trustworthiness for third-parties...Attacks performed by exploiting backdoor security flaws are not possible.
 
 Confidential Computing leverages Trusted Execution Environments. A TEE is a secure area within a processor that runs an isolated environment parrallel to the OS. 
 
 A TEE is defined as assuring:
-
 * **Data confidentiality**: Unauthorized entities cannot view data while it is in use within the TEE.
 * **Data integrity**: Unauthorized entities cannot add, remove, or alter data while it is in use within the TEE.
 * **Code integrity**: Unauthorized entities cannot add, remove, or alter code executing in the TEE.
@@ -19,13 +29,35 @@ TEE may also provide:
 * authentication 
 * code trusting 
 
-Static trust is measured only once before deployment
+## Trust 
 
-Dynamic trust is constantly measured throughout the lifecycle, based on the present state of the running system. 
+> At the lowest level, in hardware, trust is gained by having reliable root-of-trust flows that guarantee that systems are booted into known andvalid states, from trusted read-only images (possibly signed by a known and trusted provider).  Moreover, for isolates, the hardware, in tandem with firmware, must provide services that enable the measurement and cryptographic authentication of their initial contents and state. (2021, ARM)
 
-# Root of Trust (ROT)
+> In the case of software, trust is enabled by source code which is: i) available and auditable, ii) built into binaries with bit-exact reproducibility, iii) signed by a trusted party, iv) formally verified, v) equipped with verifiable certificates (e.g. in the form of a proof witness). (2021, ARM)
 
-# [AWS Nitro Enclaves](https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html#nitro-enclave-reqs)
+**Static trust** is measured only once before deployment
+
+**Dynamic trust** is constantly measured throughout the lifecycle, based on the present state of the running system. 
+
+## Commerical Confidential Computing 
+
+> Existing commercial implementations of enclaves like Intel’s SGX  lack transparency on formal correctness guarantees and higher level security properties such as confidentiality and integrity.
+
+### ARM 
+
+>  Once the capability of delegating computations safely to untrusted third-parties is developed, it no longer really matters, from a privacy point-of-view, where compute happens. (2021, ARM)
+
+> Establishing trust in the hardware and software that underlies strong isolation technology is a foundational aspect in delivering on the promises of Confidential Compute. (2021, ARM)
+
+[ARM Confidential Compute Architecture](https://www.arm.com/architecture/security-features/arm-confidential-compute-architecture) (ARM CCA)
+
+[Realm Management Extenstion](https://developer.arm.com/documentation/den0126/0100/Overview) -  A Realm is an isolate protected from privileged—and other non-privileged, but unrelated—software surrounding it, including the operating system, hypervisor, and TrustZone firmware. An untrusted operating system manages the memory and CPU resources of a Realm but cannot access nor interfere with its content or state.
+
+### Intel SGX 
+
+### AMD Sev
+
+### [AWS Nitro Enclaves](https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html#nitro-enclave-reqs)
 
 * Uses "Enclave Image File" (.EIF) format
 * Provide only secure local socket connectivity with their parent instance - vsock socket 
@@ -43,7 +75,7 @@ Dynamic trust is constantly measured throughout the lifecycle, based on the pres
 
 > Using the Nitro Enclaves SDK, an enclave can request a signed attestation document from the Nitro Hypervisor that includes its unique measurements. This document can be attached to requests from the enclave to an external service. The external service can validate the measurements included in the attestation document against the values in the access policy to determine whether to grant the enclave access to the requested operation.
 
-# [GCP Confidential Computing](https://cloud.google.com/confidential-computing)
+### [GCP Confidential Computing](https://cloud.google.com/confidential-computing)
 
 **Confidential VM**:
 
@@ -52,14 +84,14 @@ Dynamic trust is constantly measured throughout the lifecycle, based on the pres
   * How does AMD Platform Security Processor [AMD Secure Technology(p. 157)](https://www.amd.com/system/files/TechDocs/52740_16h_Models_30h-3Fh_BKDG.pdf) effect real security?   
 * Use [Virtual Trusted Platform Module](https://trustedcomputinggroup.org/resource/trusted-platform-module-tpm-summary/) Attestation. 
 
-# TEE GPU
+### TEE GPU
 
 [NVIDIA H100](https://resources.nvidia.com/en-us-tensor-core)
 
 * **Secure boot** - set of hardware/software ensuring GPU started from 
 known secure state permitting only authenticated firmware and microcode authored by NVIDIA to run while GPU booting.
 * **Measured boot** - process for collecting, securely storing, and reporting characteristics of boot process determining GPU’s secure state. 
-** **Attestation and verification** - are the means of comparing measurements to reference values to ensure that the device is an expected secure state.
+* **Attestation and verification** - are the means of comparing measurements to reference values to ensure that the device is an expected secure state.
 
 Full VM/GPU TEE created by: 
 
@@ -80,3 +112,19 @@ No CUDA application code changes are required to use the NVIDIA confidential com
 [Confidential Computing Consortium](https://confidentialcomputing.io/)
 
 [Open Titan](https://opentitan.org/) - open source reference design and integration guidelines for silicon root of trust 
+
+[Free and Open Source Silicon Foundation](https://www.fossi-foundation.org/)
+
+[Enarx - Confidential Computing in WebAssembly](https://enarx.dev/)
+
+[Keystone TEE Open Framework for RISC V](https://keystone-enclave.org/)
+
+[VeraCruz](https://veracruz-project.com/) | [Code](https://github.com/veracruz-project/veracruz) - "Veracruz’s platform abstraction also means it is an effective way of deploying computations across a host of different isolation technologies, and makes Veracruz a central pillar in realizing our vision: providing both a means for a group of mutually mistrusting individuals to collaborate, and a substrate through which computations can be safely moved around: write once, isolate anywhere"
+
+# References 
+
+(2022) Verifying RISC-V Physical Memory Protection.
+
+(2021) Towards a Trusted Execution Environment via Reconfigurable FPGA. 
+
+(2021) Confidential Computing—a brave new world. ARM.
