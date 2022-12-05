@@ -1,14 +1,16 @@
 # Confidential Computing [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-> By providing security though the lowest layers of hardware, with a minimum of dependencies, it is possible to remove the operating system and device driver vendors, platform and peripheral vendors, and service providers and their admins, from the list of required trusted parties, thereby reducing exposure to potential compromise at any point in the system lifecycle.
+> By providing security though the lowest layers of hardware, with a minimum of dependencies, it is possible to remove the operating system and device driver vendors, platform and peripheral vendors, and service providers and their admins, from the list of required trusted parties, thereby reducing exposure to potential compromise at any point in the system lifecycle. [Confidential Computing Consortium](https://confidentialcomputing.io/)
 
-> With these increased protections for data-in-use, new use cases become more realistic, e.g. multi-party computations in financial and/or regulated industries or machine learning at the edge, where the data being operated needs protecting from the processing environment owner itself.
+> With these increased protections for data-in-use, new use cases become more realistic, e.g. multi-party computations in financial and/or regulated industries or machine learning at the edge, where the data being operated needs protecting from the processing environment owner itself. [Confidential Computing Consortium](https://confidentialcomputing.io/)
 
 Confidential Computing provides end-to-end data protection at-rest, in-transit, and in-use. 
 
 **Use Cases**
 
 Secure Multiparty Computation 
+
+Privacy-preserving machine learning 
 
 Cryptographic authenticity of images, video and other content - "An isolate could be used at the point of capture to execute the image signal processing computations and append signature and attestation material to the resulting image" - hashing at the point of capture
 * use case begun  already for "mis/disinformation" by Coalition for Content Provenance and Authenticity (sigh)  
@@ -41,7 +43,7 @@ TEE may also provide:
 
 ## Commerical Confidential Computing 
 
-> Existing commercial implementations of enclaves like Intel’s SGX  lack transparency on formal correctness guarantees and higher level security properties such as confidentiality and integrity.
+> Existing commercial implementations of enclaves like Intel’s SGX lack transparency on formal correctness guarantees and higher level security properties such as confidentiality and integrity.
 
 ### ARM 
 
@@ -58,6 +60,8 @@ TEE may also provide:
 ### AMD Sev
 
 ### [AWS Nitro Enclaves](https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html#nitro-enclave-reqs)
+
+[Confidential Computing: An AWS Perspective](https://aws.amazon.com/blogs/security/confidential-computing-an-aws-perspective/)
 
 * Uses "Enclave Image File" (.EIF) format
 * Provide only secure local socket connectivity with their parent instance - vsock socket 
@@ -77,7 +81,7 @@ TEE may also provide:
 
 ### [GCP Confidential Computing](https://cloud.google.com/confidential-computing)
 
-**Confidential VM**:
+[GCP Confidential VM](https://cloud.google.com/compute/confidential-vm/docs/about-cvm)
 
 * Confidential VM is a type of Compute Engine VM
 * Confidential VM runs on hosts with AMD EPYC processors which feature - [AMD Secure Encrypted Virtualization (SEV)](https://developer.amd.com/sev/)
@@ -101,13 +105,20 @@ Full VM/GPU TEE created by:
 
 No CUDA application code changes are required to use the NVIDIA confidential computing technology
 
+# Web Assembly TEE 
+
+ARM has collaborated with the Veracruz project which is based in Web Assembly. 
+
+[VeraCruz](https://veracruz-project.com/) | [Code](https://github.com/veracruz-project/veracruz) 
+
+* "Veracruz’s platform abstraction also means it is an effective way of deploying computations across a host of different isolation technologies, and makes Veracruz a central pillar in realizing our vision: providing both a means for a group of mutually mistrusting individuals to collaborate, and a substrate through which computations can be safely moved around: write once, isolate anywhere." 
+* Veracruz aims to support similar use-cases to Advanced Cryptographic techniques, like homomorphic encryption, functional encryption, and secure multi-party computations, but uses a mixture of strong containerisation technology, remote attestation, and transport layer security protocols — instead of pure cryptography — to affect these computations.
+
+[Enarx - Confidential Computing in WebAssembly](https://enarx.dev/)
+
+
 # Links 
 
-[GCP Confidential VM](https://cloud.google.com/compute/confidential-vm/docs/about-cvm)
-
-[Confidential Computing: An AWS Perspective](https://aws.amazon.com/blogs/security/confidential-computing-an-aws-perspective/)
-
-[AWS Nitro Enclaves](https://aws.amazon.com/ec2/nitro/nitro-enclaves/)
 
 [Confidential Computing Consortium](https://confidentialcomputing.io/)
 
@@ -115,11 +126,11 @@ No CUDA application code changes are required to use the NVIDIA confidential com
 
 [Free and Open Source Silicon Foundation](https://www.fossi-foundation.org/)
 
-[Enarx - Confidential Computing in WebAssembly](https://enarx.dev/)
-
 [Keystone TEE Open Framework for RISC V](https://keystone-enclave.org/)
 
-[VeraCruz](https://veracruz-project.com/) | [Code](https://github.com/veracruz-project/veracruz) - "Veracruz’s platform abstraction also means it is an effective way of deploying computations across a host of different isolation technologies, and makes Veracruz a central pillar in realizing our vision: providing both a means for a group of mutually mistrusting individuals to collaborate, and a substrate through which computations can be safely moved around: write once, isolate anywhere"
+[GlobalPlatform TEE Committee](https://globalplatform.org/technical-committees/trusted-execution-environment-tee-committee/)
+
+[Alibaba Risc V Dev Chip Platform w/ GlobalPlatform Standard (TEE) security certification](https://www.computerweekly.com/news/252524139/Alibaba-Cloud-unveils-RISC-V-chip-development-platform)
 
 # References 
 
