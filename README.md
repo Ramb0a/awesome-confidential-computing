@@ -43,7 +43,7 @@ TEE may also provide:
 
 ## Commerical Confidential Computing 
 
-> Existing commercial implementations of enclaves like Intel’s SGX lack transparency on formal correctness guarantees and higher level security properties such as confidentiality and integrity.
+> Existing commercial implementations of enclaves like Intel’s SGX lack transparency on formal correctness guarantees and higher level security properties such as confidentiality and integrity. - (2022, [Verifying RISC-V Physical Memory Protection](https://arxiv.org/pdf/2211.02179.pdf))
 
 ### ARM 
 
@@ -117,7 +117,7 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 [Enarx - Confidential Computing in WebAssembly](https://enarx.dev/)
 
 
-# Links 
+# Links
 
 
 [Confidential Computing Consortium](https://confidentialcomputing.io/)
@@ -131,6 +131,8 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 [GlobalPlatform TEE Committee](https://globalplatform.org/technical-committees/trusted-execution-environment-tee-committee/)
 
 [Alibaba Risc V Dev Chip Platform w/ GlobalPlatform Standard (TEE) security certification](https://www.computerweekly.com/news/252524139/Alibaba-Cloud-unveils-RISC-V-chip-development-platform)
+
+[RISC Zero](https://www.risczero.com/) | :keyboard: [code](https://github.com/risc0/risc0)
 
 # References 
 
