@@ -31,7 +31,7 @@ TEE may also provide:
 * authentication 
 * code trusting 
 
-## Trust 
+## Trust
 
 > At the lowest level, in hardware, trust is gained by having reliable root-of-trust flows that guarantee that systems are booted into known andvalid states, from trusted read-only images (possibly signed by a known and trusted provider).  Moreover, for isolates, the hardware, in tandem with firmware, must provide services that enable the measurement and cryptographic authentication of their initial contents and state. (2021, ARM)
 
@@ -42,8 +42,6 @@ TEE may also provide:
 **Dynamic trust** is constantly measured throughout the lifecycle, based on the present state of the running system. 
 
 ## Commerical Confidential Computing 
-
-> Existing commercial implementations of enclaves like Intel’s SGX lack transparency on formal correctness guarantees and higher level security properties such as confidentiality and integrity. - (2022, [Verifying RISC-V Physical Memory Protection](https://arxiv.org/pdf/2211.02179.pdf))
 
 ### ARM 
 
@@ -105,7 +103,13 @@ Full VM/GPU TEE created by:
 
 No CUDA application code changes are required to use the NVIDIA confidential computing technology
 
-# Web Assembly TEE 
+# Open Confidential Compute
+
+> Existing commercial implementations of enclaves like Intel’s SGX lack transparency on formal correctness guarantees and higher level security properties such as confidentiality and integrity. - (2022, [Verifying RISC-V Physical Memory Protection](https://arxiv.org/pdf/2211.02179.pdf))
+
+If you cannot see the code, can you trust the execution? Can closed source really be confidential with the controversial [Intel Minix OS](https://itsfoss.com/fact-intel-minix-case/) as just one example of the obfuscation engaged in by chip makers.  
+
+## WebAssembly Confidential Compute 
 
 ARM has collaborated with the Veracruz project which is based in Web Assembly. 
 
@@ -116,23 +120,20 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 
 [Enarx - Confidential Computing in WebAssembly](https://enarx.dev/)
 
-
-# Links
-
-
-[Confidential Computing Consortium](https://confidentialcomputing.io/)
-
-[Open Titan](https://opentitan.org/) - open source reference design and integration guidelines for silicon root of trust 
-
-[Free and Open Source Silicon Foundation](https://www.fossi-foundation.org/)
+## Risc V Confidential Compute 
 
 [Keystone TEE Open Framework for RISC V](https://keystone-enclave.org/)
-
-[GlobalPlatform TEE Committee](https://globalplatform.org/technical-committees/trusted-execution-environment-tee-committee/)
 
 [Alibaba Risc V Dev Chip Platform w/ GlobalPlatform Standard (TEE) security certification](https://www.computerweekly.com/news/252524139/Alibaba-Cloud-unveils-RISC-V-chip-development-platform)
 
 [RISC Zero](https://www.risczero.com/) | :keyboard: [code](https://github.com/risc0/risc0)
+
+# Links
+
+- [Confidential Computing Consortium](https://confidentialcomputing.io/)
+- [Open Titan](https://opentitan.org/) - open source reference design and integration guidelines for silicon root of trust 
+- [Free and Open Source Silicon Foundation](https://www.fossi-foundation.org/)
+- [GlobalPlatform TEE Committee](https://globalplatform.org/technical-committees/trusted-execution-environment-tee-committee/)
 
 # References 
 
