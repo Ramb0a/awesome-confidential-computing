@@ -17,15 +17,6 @@
 
 Confidential Computing provides end-to-end data protection at-rest, in-transit, and in-use. Data and algorithm are protected in a hardware enclave during processing. 
 
-### Use Cases
-
-Secure Multiparty Computation 
-
-Privacy-preserving machine learning 
-
-Cryptographic authenticity of images, video and other content - "An isolate could be used at the point of capture to execute the image signal processing computations and append signature and attestation material to the resulting image" - hashing at the point of capture
-* use case begun  already for "mis/disinformation" by Coalition for Content Provenance and Authenticity (sigh)  
-
 ## Trust
 
 > At the lowest level, in hardware, trust is gained by having reliable root-of-trust flows that guarantee that systems are booted into known andvalid states, from trusted read-only images (possibly signed by a known and trusted provider).  Moreover, for isolates, the hardware, in tandem with firmware, must provide services that enable the measurement and cryptographic authentication of their initial contents and state. (2021, ARM)
