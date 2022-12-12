@@ -41,7 +41,7 @@ TEE may also provide:
 
 **Dynamic trust** is constantly measured throughout the lifecycle, based on the present state of the running system. 
 
-## Commerical Confidential Computing 
+## Commerical Confidential Computing
 
 ### ARM
 
@@ -53,7 +53,7 @@ TEE may also provide:
 
 [Realm Management Extenstion](https://developer.arm.com/documentation/den0126/0100/Overview) -  A Realm is an isolate protected from privileged—and other non-privileged, but unrelated—software surrounding it, including the operating system, hypervisor, and TrustZone firmware. An untrusted operating system manages the memory and CPU resources of a Realm but cannot access nor interfere with its content or state.
 
-### Intel SGX 
+### Intel SGX
 
 [SGX Step](https://github.com/jovanbulck/sgx-step)
 
@@ -124,7 +124,7 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 
 > Enarx aims to minimize the trust relationships required when executing applications, meaning that the only components which need to be trusted are: the CPU and associated firmware, the workload itself, and the Enarx middleware, which is fully open source and auditable. 
 
-* provides a WebAssembly runtime, based on wasmtime
+* provides a WebAssembly runtime, based on [wasmtime](https://github.com/bytecodealliance/wasmtime)
 * designed to work across silicon architectures transparently to the user
 
 ## Risc V Confidential Compute 
@@ -135,12 +135,13 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 
 [RISC Zero](https://www.risczero.com/) | :keyboard: [code](https://github.com/risc0/risc0)
 
-# Links
+# Open Source Links
 
 - [Confidential Computing Consortium](https://confidentialcomputing.io/)
 - [Open Titan](https://opentitan.org/) - open source reference design and integration guidelines for silicon root of trust 
 - [Free and Open Source Silicon Foundation](https://www.fossi-foundation.org/)
 - [GlobalPlatform TEE Committee](https://globalplatform.org/technical-committees/trusted-execution-environment-tee-committee/)
+- [Keylime](https://keylime.dev/) | :keyboard: [github](https://github.com/keylime/keylime) | :crab: [rust official keylime agent](https://github.com/keylime/rust-keylime) - Open Source remote boot attestation and runtime integrity measurement
 
 # References 
 
