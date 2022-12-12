@@ -1,12 +1,23 @@
 # Confidential Computing [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
+## Content 
+
+- [What is Confidential Compute](#what-is-confidential-compute) :grey_question:
+- [Trust](#trust)
+- [Trusted Execution Environments](#trusted-execution-environments)
+- [Commercial Confidential Computing](#commercial-confidential-computing)
+- [Open Confidential Compute](#open-confidentiality-compute)
+- [References](#references)
+
+## What is Confidential Compute
+
 > By providing security though the lowest layers of hardware, with a minimum of dependencies, it is possible to remove the operating system and device driver vendors, platform and peripheral vendors, and service providers and their admins, from the list of required trusted parties, thereby reducing exposure to potential compromise at any point in the system lifecycle. [Confidential Computing Consortium](https://confidentialcomputing.io/)
 
 > With these increased protections for data-in-use, new use cases become more realistic, e.g. multi-party computations in financial and/or regulated industries or machine learning at the edge, where the data being operated needs protecting from the processing environment owner itself. [Confidential Computing Consortium](https://confidentialcomputing.io/)
 
-Confidential Computing provides end-to-end data protection at-rest, in-transit, and in-use. 
+Confidential Computing provides end-to-end data protection at-rest, in-transit, and in-use. Data and algorithm are protected in a hardware enclave during processing. 
 
-**Use Cases**
+### Use Cases
 
 Secure Multiparty Computation 
 
@@ -15,7 +26,18 @@ Privacy-preserving machine learning
 Cryptographic authenticity of images, video and other content - "An isolate could be used at the point of capture to execute the image signal processing computations and append signature and attestation material to the resulting image" - hashing at the point of capture
 * use case begun  already for "mis/disinformation" by Coalition for Content Provenance and Authenticity (sigh)  
 
-## Trusted Execution Environment 
+## Trust
+
+> At the lowest level, in hardware, trust is gained by having reliable root-of-trust flows that guarantee that systems are booted into known andvalid states, from trusted read-only images (possibly signed by a known and trusted provider).  Moreover, for isolates, the hardware, in tandem with firmware, must provide services that enable the measurement and cryptographic authentication of their initial contents and state. (2021, ARM)
+
+> In the case of software, trust is enabled by source code which is: i) available and auditable, ii) built into binaries with bit-exact reproducibility, iii) signed by a trusted party, iv) formally verified, v) equipped with verifiable certificates (e.g. in the form of a proof witness). (2021, ARM)
+
+**Static trust** is measured only once before deployment
+
+**Dynamic trust** is constantly measured throughout the lifecycle, based on the present state of the running system. 
+
+
+## Trusted Execution Environments
 
 > Trusted Execution Environment (TEE) is a tamper resistant processing environment that runs on a separation kernel. It guarantees the authenticity of the executed code, the integrity of the runtime states (e.g. CPU registers, memory and sensitive I/O), and the confidentiality of its code, data and runtime states stored on a persistent memory. In addition, it shall be able to provide remote attestation that proves its trustworthiness for third-parties...Attacks performed by exploiting backdoor security flaws are not possible.
 
@@ -31,19 +53,10 @@ TEE may also provide:
 * authentication 
 * code trusting 
 
-## Trust
 
-> At the lowest level, in hardware, trust is gained by having reliable root-of-trust flows that guarantee that systems are booted into known andvalid states, from trusted read-only images (possibly signed by a known and trusted provider).  Moreover, for isolates, the hardware, in tandem with firmware, must provide services that enable the measurement and cryptographic authentication of their initial contents and state. (2021, ARM)
+# Commercial Confidential Computing
 
-> In the case of software, trust is enabled by source code which is: i) available and auditable, ii) built into binaries with bit-exact reproducibility, iii) signed by a trusted party, iv) formally verified, v) equipped with verifiable certificates (e.g. in the form of a proof witness). (2021, ARM)
-
-**Static trust** is measured only once before deployment
-
-**Dynamic trust** is constantly measured throughout the lifecycle, based on the present state of the running system. 
-
-## Commerical Confidential Computing
-
-### ARM
+## ARM
 
 >  Once the capability of delegating computations safely to untrusted third-parties is developed, it no longer really matters, from a privacy point-of-view, where compute happens. (2021, ARM)
 
@@ -53,13 +66,13 @@ TEE may also provide:
 
 [Realm Management Extenstion](https://developer.arm.com/documentation/den0126/0100/Overview) -  A Realm is an isolate protected from privileged—and other non-privileged, but unrelated—software surrounding it, including the operating system, hypervisor, and TrustZone firmware. An untrusted operating system manages the memory and CPU resources of a Realm but cannot access nor interfere with its content or state.
 
-### Intel SGX
+## Intel SGX
 
 [SGX Step](https://github.com/jovanbulck/sgx-step)
 
-### AMD Sev
+## AMD Sev
 
-### [AWS Nitro Enclaves](https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html#nitro-enclave-reqs)
+## [AWS Nitro Enclaves](https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html#nitro-enclave-reqs)
 
 [Confidential Computing: An AWS Perspective](https://aws.amazon.com/blogs/security/confidential-computing-an-aws-perspective/)
 
@@ -79,7 +92,7 @@ TEE may also provide:
 
 > Using the Nitro Enclaves SDK, an enclave can request a signed attestation document from the Nitro Hypervisor that includes its unique measurements. This document can be attached to requests from the enclave to an external service. The external service can validate the measurements included in the attestation document against the values in the access policy to determine whether to grant the enclave access to the requested operation.
 
-### [GCP Confidential Computing](https://cloud.google.com/confidential-computing)
+## [GCP Confidential Computing](https://cloud.google.com/confidential-computing)
 
 [GCP Confidential VM](https://cloud.google.com/compute/confidential-vm/docs/about-cvm)
 
@@ -88,7 +101,7 @@ TEE may also provide:
   * How does AMD Platform Security Processor [AMD Secure Technology(p. 157)](https://www.amd.com/system/files/TechDocs/52740_16h_Models_30h-3Fh_BKDG.pdf) effect real security?   
 * Use [Virtual Trusted Platform Module](https://trustedcomputinggroup.org/resource/trusted-platform-module-tpm-summary/) Attestation. 
 
-### TEE GPU
+## GPU Trusted Execution Environments 
 
 [NVIDIA H100](https://resources.nvidia.com/en-us-tensor-core)
 
@@ -135,13 +148,23 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 
 [RISC Zero](https://www.risczero.com/) | :keyboard: [code](https://github.com/risc0/risc0)
 
-# Open Source Links
+## Open Source Links
 
 - [Confidential Computing Consortium](https://confidentialcomputing.io/)
 - [Open Titan](https://opentitan.org/) - open source reference design and integration guidelines for silicon root of trust 
 - [Free and Open Source Silicon Foundation](https://www.fossi-foundation.org/)
 - [GlobalPlatform TEE Committee](https://globalplatform.org/technical-committees/trusted-execution-environment-tee-committee/)
 - [Keylime](https://keylime.dev/) | :keyboard: [github](https://github.com/keylime/keylime) | :crab: [rust official keylime agent](https://github.com/keylime/rust-keylime) - Open Source remote boot attestation and runtime integrity measurement
+
+## Confidential Compute Use Cases
+
+Secure Multiparty Computation 
+
+Privacy-preserving machine learning 
+
+Cryptographic authenticity of images, video and other content - "An isolate could be used at the point of capture to execute the image signal processing computations and append signature and attestation material to the resulting image" - hashing at the point of capture
+* use case begun  already for "mis/disinformation" by Coalition for Content Provenance and Authenticity (sigh)  
+
 
 # References 
 
