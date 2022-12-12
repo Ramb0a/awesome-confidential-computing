@@ -15,7 +15,7 @@ Privacy-preserving machine learning
 Cryptographic authenticity of images, video and other content - "An isolate could be used at the point of capture to execute the image signal processing computations and append signature and attestation material to the resulting image" - hashing at the point of capture
 * use case begun  already for "mis/disinformation" by Coalition for Content Provenance and Authenticity (sigh)  
 
-## Trusted Execution Environments 
+## Trusted Execution Environment 
 
 > Trusted Execution Environment (TEE) is a tamper resistant processing environment that runs on a separation kernel. It guarantees the authenticity of the executed code, the integrity of the runtime states (e.g. CPU registers, memory and sensitive I/O), and the confidentiality of its code, data and runtime states stored on a persistent memory. In addition, it shall be able to provide remote attestation that proves its trustworthiness for third-parties...Attacks performed by exploiting backdoor security flaws are not possible.
 
@@ -43,7 +43,7 @@ TEE may also provide:
 
 ## Commerical Confidential Computing 
 
-### ARM 
+### ARM
 
 >  Once the capability of delegating computations safely to untrusted third-parties is developed, it no longer really matters, from a privacy point-of-view, where compute happens. (2021, ARM)
 
@@ -54,6 +54,8 @@ TEE may also provide:
 [Realm Management Extenstion](https://developer.arm.com/documentation/den0126/0100/Overview) -  A Realm is an isolate protected from privileged—and other non-privileged, but unrelated—software surrounding it, including the operating system, hypervisor, and TrustZone firmware. An untrusted operating system manages the memory and CPU resources of a Realm but cannot access nor interfere with its content or state.
 
 ### Intel SGX 
+
+[SGX Step](https://github.com/jovanbulck/sgx-step)
 
 ### AMD Sev
 
@@ -119,6 +121,11 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 * Veracruz aims to support similar use-cases to Advanced Cryptographic techniques, like homomorphic encryption, functional encryption, and secure multi-party computations, but uses a mixture of strong containerisation technology, remote attestation, and transport layer security protocols — instead of pure cryptography — to affect these computations.
 
 [Enarx - Confidential Computing in WebAssembly](https://enarx.dev/)
+
+> Enarx aims to minimize the trust relationships required when executing applications, meaning that the only components which need to be trusted are: the CPU and associated firmware, the workload itself, and the Enarx middleware, which is fully open source and auditable. 
+
+* provides a WebAssembly runtime, based on wasmtime
+* designed to work across silicon architectures transparently to the user
 
 ## Risc V Confidential Compute 
 
