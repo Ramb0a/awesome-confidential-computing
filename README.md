@@ -17,6 +17,7 @@
 
 Confidential Computing provides end-to-end data protection at-rest, in-transit, and in-use. Data and algorithm are protected in a hardware enclave during processing. 
 
+
 ## Trust
 
 > At the lowest level, in hardware, trust is gained by having reliable root-of-trust flows that guarantee that systems are booted into known andvalid states, from trusted read-only images (possibly signed by a known and trusted provider).  Moreover, for isolates, the hardware, in tandem with firmware, must provide services that enable the measurement and cryptographic authentication of their initial contents and state. (2021, ARM)
@@ -60,6 +61,8 @@ TEE may also provide:
 ## Intel SGX
 
 [SGX Step](https://github.com/jovanbulck/sgx-step)
+
+[Intel TDE](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-trust-domain-extensions.html) - Trust Domain Extention 
 
 ## AMD Sev
 
