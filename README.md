@@ -125,8 +125,9 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 [VeraCruz](https://veracruz-project.com/) | [Code](https://github.com/veracruz-project/veracruz) 
 
 * "Veracruz’s platform abstraction also means it is an effective way of deploying computations across a host of different isolation technologies, and makes Veracruz a central pillar in realizing our vision: providing both a means for a group of mutually mistrusting individuals to collaborate, and a substrate through which computations can be safely moved around: write once, isolate anywhere." 
-* Veracruz aims to support similar use-cases to Advanced Cryptographic techniques, like homomorphic encryption, functional encryption, and secure multi-party computations, but uses a mixture of strong containerisation technology, remote attestation, and transport layer security protocols — instead of pure cryptography — to affect these computations.
-
+* Veracruz aims to support similar use-cases to Advanced Cryptographic techniques, like homomorphic encryption, functional encryption, and secure multi-party computations, but uses a mixture of strong containerization technology, remote attestation, and transport layer security protocols — instead of pure cryptography — to affect these computations.
+* Currently creates a Docker dev image on AWS Nitro or Linux with no trusted execution environment. 
+ 
 [Enarx - Confidential Computing in WebAssembly](https://enarx.dev/)
 
 > Enarx aims to minimize the trust relationships required when executing applications, meaning that the only components which need to be trusted are: the CPU and associated firmware, the workload itself, and the Enarx middleware, which is fully open source and auditable. 
@@ -136,11 +137,10 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 
 ## Risc V Confidential Compute 
 
-[Keystone TEE Open Framework for RISC V](https://keystone-enclave.org/)
-
-[Alibaba Risc V Dev Chip Platform w/ GlobalPlatform Standard (TEE) security certification](https://www.computerweekly.com/news/252524139/Alibaba-Cloud-unveils-RISC-V-chip-development-platform)
-
-[RISC Zero](https://www.risczero.com/) | :keyboard: [code](https://github.com/risc0/risc0)
+- [Keystone TEE Open Framework for RISC V](https://keystone-enclave.org/)
+- [Alibaba Risc V Dev Chip Platform w/ GlobalPlatform Standard (TEE) security certification](https://www.computerweekly.com/news/252524139/Alibaba-Cloud-unveils-RISC-V-chip-development-platform)
+- [RISC Zero](https://www.risczero.com/) | :keyboard: [code](https://github.com/risc0/risc0)
+- [GoTee](https://github.com/usbarmory/GoTEE) - Extend Go language to allow execution of a goroutine within an enclave, to use low-overhead channels to communicate between the trusted and untrusted environments, and to rely on a compiler to automatically extract the secure code and data. Achieves a 5.2x throughput, and a 2.3x latency improvement over the Intel SGX SDK
 
 ## Open Source Links
 
