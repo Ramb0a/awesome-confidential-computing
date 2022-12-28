@@ -1,5 +1,7 @@
 # Confidential Computing [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
+There is a secret operating system [watching you](https://www.zdnet.com/article/minix-intels-hidden-in-chip-operating-system/). 
+
 ## Content 
 
 - [What is Confidential Compute](#what-is-confidential-compute) :grey_question:
@@ -20,7 +22,7 @@ Confidential Computing provides end-to-end data protection at-rest, in-transit, 
 
 ## Trust
 
-> At the lowest level, in hardware, trust is gained by having reliable root-of-trust flows that guarantee that systems are booted into known andvalid states, from trusted read-only images (possibly signed by a known and trusted provider).  Moreover, for isolates, the hardware, in tandem with firmware, must provide services that enable the measurement and cryptographic authentication of their initial contents and state. (2021, ARM)
+> At the lowest level, in hardware, trust is gained by having reliable root-of-trust flows that guarantee that systems are booted into known and valid states, from trusted read-only images (possibly signed by a known and trusted provider).  Moreover, for isolates, the hardware, in tandem with firmware, must provide services that enable the measurement and cryptographic authentication of their initial contents and state. (2021, ARM)
 
 > In the case of software, trust is enabled by source code which is: i) available and auditable, ii) built into binaries with bit-exact reproducibility, iii) signed by a trusted party, iv) formally verified, v) equipped with verifiable certificates (e.g. in the form of a proof witness). (2021, ARM)
 
@@ -132,6 +134,8 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 
 > Enarx aims to minimize the trust relationships required when executing applications, meaning that the only components which need to be trusted are: the CPU and associated firmware, the workload itself, and the Enarx middleware, which is fully open source and auditable. 
 
+**the problem with "trusting the CPU + firmware" are - what if you can't trust the CPU and firmware - ala the secret operating system to which you have no access**
+
 * provides a WebAssembly runtime, based on [wasmtime](https://github.com/bytecodealliance/wasmtime)
 * designed to work across silicon architectures transparently to the user
 
@@ -139,7 +143,7 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 
 - [Keystone TEE Open Framework for RISC V](https://keystone-enclave.org/)
 - [Alibaba Risc V Dev Chip Platform w/ GlobalPlatform Standard (TEE) security certification](https://www.computerweekly.com/news/252524139/Alibaba-Cloud-unveils-RISC-V-chip-development-platform)
-- [RISC Zero](https://www.risczero.com/) | :keyboard: [code](https://github.com/risc0/risc0)
+- [RISC Zero](https://www.risczero.com/) | :keyboard: [code](https://github.com/risc0/risc0) - The RISC Zero zeroKnowledgeVirtualMachine (zkVM) emulates a small RISC-V computer, allowing it to run arbitrary code in any language, so long as a compiler toolchain exists that targets RISC-V. One party (the prover) to convince another party (the verifier) that something is true without revealing all the details.
 - [GoTee](https://github.com/usbarmory/GoTEE) - Extend Go language to allow execution of a goroutine within an enclave, to use low-overhead channels to communicate between the trusted and untrusted environments, and to rely on a compiler to automatically extract the secure code and data. Achieves a 5.2x throughput, and a 2.3x latency improvement over the Intel SGX SDK
 
 ## Open Source Links
@@ -147,6 +151,7 @@ ARM has collaborated with the Veracruz project which is based in Web Assembly.
 - [Confidential Computing Consortium](https://confidentialcomputing.io/)
 - [Open Titan](https://opentitan.org/) - open source reference design and integration guidelines for silicon root of trust 
 - [Free and Open Source Silicon Foundation](https://www.fossi-foundation.org/)
+- [lowRisc](https://lowrisc.org/) - Non-profit steward of Open Titan 
 - [GlobalPlatform TEE Committee](https://globalplatform.org/technical-committees/trusted-execution-environment-tee-committee/)
 - [Keylime](https://keylime.dev/) | :keyboard: [github](https://github.com/keylime/keylime) | :crab: [rust official keylime agent](https://github.com/keylime/rust-keylime) - Open Source remote boot attestation and runtime integrity measurement
 
